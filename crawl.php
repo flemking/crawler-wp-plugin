@@ -35,7 +35,7 @@ if (!class_exists('Crawler')) {
          */
         function crawlerMenu()
         {
-            add_menu_page('WP Crawler', 'Crawler', 'manage_options', 'wpcrawler-menu', array($this, 'wpcrawlerPage'), 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMCAyMEMxNS41MjI5IDIwIDIwIDE1LjUyMjkgMjAgMTBDMjAgNC40NzcxNCAxNS41MjI5IDAgMTAgMEM0LjQ3NzE0IDAgMCA0LjQ3NzE0IDAgMTBDMCAxNS41MjI5IDQuNDc3MTQgMjAgMTAgMjBaTTExLjk5IDcuNDQ2NjZMMTAuMDc4MSAxLjU2MjVMOC4xNjYyNiA3LjQ0NjY2SDEuOTc5MjhMNi45ODQ2NSAxMS4wODMzTDUuMDcyNzUgMTYuOTY3NEwxMC4wNzgxIDEzLjMzMDhMMTUuMDgzNSAxNi45Njc0TDEzLjE3MTYgMTEuMDgzM0wxOC4xNzcgNy40NDY2NkgxMS45OVoiIGZpbGw9IiNGRkRGOEQiLz4KPC9zdmc+', 0);
+            add_menu_page('WP Crawler', 'Crawler', 'manage_options', 'wpcrawler-menu', array($this, 'wpcrawlerPage'), 'dashicons-admin-links', 0);
             add_submenu_page('wpcrawler-menu', 'Crawl Launcher', 'Crawl Launcher', 'manage_options', 'wpcrawler-menu', array($this, 'wpcrawlerPage'));
             add_submenu_page('wpcrawler-menu', 'Crawl Options', 'Options', 'manage_options', 'wpcrawler-options', array($this, 'optionsPage'));
         }
@@ -200,12 +200,6 @@ if (!class_exists('Crawler')) {
             // echo get_option('crawl_html');
         }
 
-        // function crawlerSettings()
-        // {
-        //     add_settings_section('replacement-text-section', null, null, 'word-filter-options');
-        //     register_setting('replacementFields', 'replacementText');
-        //     add_settings_field('replacement-text', 'Filtered Text', array($this, 'replacementFieldHTML'), 'word-filter-options', 'replacement-text-section');
-        // }
 
         function start_crawler($url, $base_url, $depth = 0, $maxDepth = 1000, &$crawledLinks = [])
         {
